@@ -9,7 +9,8 @@ import { Countries } from './../../core/interfaces/countries';
   styleUrls: ['./countries.component.scss'],
 })
 export class CountriesComponent {
-  countries!: Countries[];
+  private countries!: Countries[];
+  filteredCountries: Countries[] = [];
 
   constructor(
     private http: HttpClient,
@@ -19,6 +20,22 @@ export class CountriesComponent {
   ngOnInit(): void {
     this.countriesService.getCountries().subscribe((res) => {
       this.countries = res;
+      this.filteredCountries = res;
+    });
+  }
+  filterCountriesByRegion(value: string): void {
+    if (value === 'all') {
+      this.filteredCountries = this.countries;
+    } else {
+      this.filteredCountries = this.countries.filter(
+        (country) => country.region.toLowerCase() === value.toLowerCase()
+      );
+    }
+  }
+
+  filterCountriesByName(value: string): void {
+    this.filteredCountries = this.countries.filter((country) => {
+      return country.name.common.toLowerCase().includes(value.toLowerCase());
     });
   }
 }

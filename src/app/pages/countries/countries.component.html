@@ -1,8 +1,28 @@
+<div class="find">
+  <div class="search">
+    <input
+      #searchQuery
+      type="text"
+      placeholder="Search for a country..."
+      (input)="filterCountriesByName(searchQuery.value)"
+    />
+  </div>
+  <div class="filter">
+    <select #region (change)="filterCountriesByRegion(region.value)">
+      <option value="" disabled selected hidden>Filter by Region</option>
+      <option value="all">All</option>
+      <option value="Europe">Europe</option>
+      <option value="Oceania">Oceania</option>
+      <option value="Asia">Asia</option>
+      <option value="Africa">Africa</option>
+      <option value="Americas">America</option>
+    </select>
+  </div>
+</div>
+
 <div class="container">
-  <p class="error" *ngIf="!countries?.length">
-    Hold tight! Our systems are fine-tuning themselves. Please retry in a bit.
-  </p>
-  <div class="country" *ngFor="let country of countries">
+  <p class="error" *ngIf="!filteredCountries?.length">No record found!</p>
+  <div class="country" *ngFor="let country of filteredCountries">
     <div
       class="flag"
       [ngStyle]="{ 'background-image': 'url(' + country.flags.png + ')' }"

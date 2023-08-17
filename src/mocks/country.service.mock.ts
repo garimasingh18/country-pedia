@@ -14,11 +14,20 @@ export class CountriesServiceStub {
       },
       {
         name: {
-          common: 'US',
+          common: 'Czechia',
         },
         population: 222,
-        region: 'some US region',
-        capital: 'US capital',
+        region: 'some Serbia region',
+        capital: 'Serbia capital',
+        flags: { png: 'someurl' },
+      },
+      {
+        name: {
+          common: 'Serbia',
+        },
+        population: 222,
+        region: 'some Serbia region',
+        capital: 'Serbia capital',
         flags: { png: 'someurl' },
       },
     ]);

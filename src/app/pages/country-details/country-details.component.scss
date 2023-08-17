@@ -15,12 +15,17 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   margin-top: 40px;
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+  }
 }
 
 .flag {
-  width: 500px;
+  @media only screen and (min-width: 600px) {
+    width: 500px;
+  }
   img {
     width: 100%;
     height: auto;
@@ -37,8 +42,16 @@
 .list {
   display: flex;
   margin-top: $xlarge;
+  flex-direction: column;
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+  }
   > div {
+    margin-top: $medium;
     width: 50%;
+    @media only screen and (min-width: 600px) {
+      margin-top: 0;
+    }
   }
   ul li {
     margin-bottom: $xsmall;
@@ -46,13 +59,22 @@
 }
 
 .border {
+  b {
+    display: block;
+    width: 100%;
+    @media only screen and (min-width: 600px) {
+      display: inline;
+      width: auto;
+    }
+  }
   display: flex;
   align-items: baseline;
   font-size: 16px;
   height: 24px;
   margin-top: 30px;
+  flex-wrap: wrap;
   p {
-    margin: 0 0 0 15px;
+    margin: 0 15px 15px 0;
     height: 20px;
     padding: 5px 30px;
     background-color: $base-white;

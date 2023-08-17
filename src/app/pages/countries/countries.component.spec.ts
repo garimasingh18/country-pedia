@@ -39,6 +39,16 @@ describe('CountriesComponent', () => {
   });
 
   it('should have country list populated', () => {
-    expect(component.countries.length).toEqual(2);
+    expect(component.filteredCountries.length).toEqual(3);
+  });
+
+  it('should filter countries by name', () => {
+    let searchInput = fixture.nativeElement.querySelector('Input');
+    searchInput.value = 'Serbia';
+
+    searchInput.dispatchEvent(new Event('input'));
+    fixture.detectChanges();
+
+    expect(component.filteredCountries.length).toBe(1);
   });
 });
