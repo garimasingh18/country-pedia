@@ -64,14 +64,10 @@ p {
   padding: 0;
 }
 body {
-  padding: $small;
   margin: 0;
   font-size: $basefont;
   background-color: $white-darker-10;
   font-family: Arial, Helvetica, "Lucida Sans", "Lucida Sans Regular";
-  @media only screen and (min-width: 600px) {
-    padding: $xxxlarge;
-  }
 }
 a {
   color: $base-black;
@@ -79,5 +75,11 @@ a {
   &:hover,
   &:active {
     text-decoration: underline;
+  }
+}
+.main {
+  padding: $small;
+  @media only screen and (min-width: 600px) {
+    padding: 0 $xxxlarge $xxxlarge;
   }
 }

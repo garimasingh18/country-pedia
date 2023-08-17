@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CountryDetailsComponent } from './pages/country-details/country-details.component';
 import { CountriesComponent } from './pages/countries/countries.component';
 import { ReplaceSpacesWithDashPipe } from './core/pipes/replace-spaces-with-dash.pipe';
+import { HeaderComponent } from './features/header/header.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { ReplaceSpacesWithDashPipe } from './core/pipes/replace-spaces-with-dash
     CountryDetailsComponent,
     CountriesComponent,
     ReplaceSpacesWithDashPipe,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
