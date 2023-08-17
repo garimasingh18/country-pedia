@@ -3,9 +3,7 @@
     <span>Back</span>
   </a>
 </div>
-<div class="container" *ngIf="!country">
-  Implement browser back gourd to prevent refresh
-</div>
+<div class="container" *ngIf="!country">Implement browser back guard</div>
 <div class="container" *ngIf="country">
   <div class="flag">
     <img [src]="country.flags.png" alt="flag" />
@@ -44,9 +42,9 @@
     <div class="border">
       <b>Border Countries:</b>
       <div *ngFor="let border of country.borders">
-        <p>
+        <a routerLink="{{ getCountryLink(border) | replaceSpacesWithDash }}">
           {{ border }}
-        </p>
+        </a>
       </div>
     </div>
   </div>

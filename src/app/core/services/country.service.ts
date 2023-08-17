@@ -22,10 +22,16 @@ export class CountryService {
       );
   }
 
-  getCountryDeatils(countryName: string): any {
+  getCountryDetails(countryName: string): any {
     const country = this.countries.filter(
       (c) => c.name.common === countryName
     )[0];
     return country;
+  }
+
+  getCountryNameByID(id: string): any {
+    const country = this.countries.filter((c) => c.cca3 === id)[0];
+
+    return country.name.common;
   }
 }

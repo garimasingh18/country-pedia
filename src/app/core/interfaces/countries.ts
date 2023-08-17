@@ -6,6 +6,7 @@ export interface Countries {
   population: number;
   region: string;
   capital: string;
+  cca3: string;
   flags: { png: string };
 }
 export interface CountriesDeatils {
@@ -17,6 +18,7 @@ export interface CountriesDeatils {
   region: string;
   subregion: string;
   capital: string;
+  cca3: string;
   flags: { png: string };
   tld?: string;
   borders?: string[];

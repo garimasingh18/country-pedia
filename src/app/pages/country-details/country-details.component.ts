@@ -19,9 +19,16 @@ export class CountryDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const countryName: string = this.activatedRoute.snapshot.params[
-      'name'
-    ].replaceAll('-', ' ');
-    this.country = this.countriesService.getCountryDeatils(countryName);
+    this.activatedRoute.params.subscribe((params) => {
+      const countryName = params['name'].replaceAll('-', ' ');
+      console.log(countryName);
+      this.country = this.countriesService.getCountryDetails(countryName);
+    });
+  }
+
+  getCountryLink(id: any) {
+    const name = this.countriesService.getCountryNameByID(id);
+
+    return '/country-detail/' + name;
   }
 }
