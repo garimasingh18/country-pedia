@@ -10,7 +10,11 @@
 
     <div class="informations">
       <div class="name">
-        <a href="#">
+        <a
+          [routerLink]="
+            '/country-detail/' + country?.name?.common | replaceSpacesWithDash
+          "
+        >
           <b>{{ country.name.common }}</b>
         </a>
       </div>

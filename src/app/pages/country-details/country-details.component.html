@@ -1,1 +1,53 @@
-<p>country-details works!</p>
+<div class="back">
+  <a routerLink="/">
+    <span>Back</span>
+  </a>
+</div>
+<div class="container" *ngIf="!country">
+  Implement browser back gourd to prevent refresh
+</div>
+<div class="container" *ngIf="country">
+  <div class="flag">
+    <img [src]="country.flags.png" alt="flag" />
+  </div>
+  <div class="description">
+    <h3>{{ country.name.common }}</h3>
+    <div class="list">
+      <div>
+        <ul>
+          <li><b>Native Name:</b></li>
+          <li><b>Population: </b>{{ country.population }}</li>
+          <li><b>Region:</b> {{ country.region }}</li>
+          <li><b>Sub Region:</b> {{ country.subregion }}</li>
+          <li><b>Capital: </b>{{ country.capital }}</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li><b>Top Level Domain: </b>{{ country.tld }}</li>
+          <li>
+            <b>Currencies:</b>
+            <span *ngFor="let currency of country.currencies">
+              {{ currency.name }} ({{ currency.symbol }})
+            </span>
+          </li>
+          <li>
+            <b>Languages:</b>
+            <!--<span *ngFor="let language of country.languages">
+              {{ language.name }} ({{ language.nativeName }})
+            </span>-->
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border">
+      <b>Border Countries:</b>
+      <div *ngFor="let border of country.borders">
+        <p>
+          {{ border }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

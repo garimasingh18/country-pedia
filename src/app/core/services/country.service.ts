@@ -21,4 +21,11 @@ export class CountryService {
         })
       );
   }
+
+  getCountryDeatils(countryName: string): any {
+    const country = this.countries.filter(
+      (c) => c.name.common === countryName
+    )[0];
+    return country;
+  }
 }

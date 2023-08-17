@@ -7,6 +7,7 @@ import { CountryDetailsComponent } from './pages/country-details/country-details
 const routes: Routes = [
   { path: '', component: CountriesComponent },
   { path: 'country-details', component: CountryDetailsComponent },
+  { path: 'country-detail/:name', component: CountryDetailsComponent },
 ];
 
 @NgModule({

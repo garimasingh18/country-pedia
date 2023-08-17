@@ -5,12 +5,12 @@ export class CountriesServiceStub {
     return of([
       {
         name: {
-          common: 'UK',
+          common: 'Saudi Arabia',
         },
         population: 111,
         region: 'some region',
         capital: 'UK capital',
-        flags: 'someurl/uk.png',
+        flags: { png: 'someurl' },
       },
       {
         name: {
@@ -19,8 +19,24 @@ export class CountriesServiceStub {
         population: 222,
         region: 'some US region',
         capital: 'US capital',
-        flags: 'someurl/us.png',
+        flags: { png: 'someurl' },
       },
     ]);
+  }
+  getCountryDeatils(name: any) {
+    return [
+      {
+        name: {
+          common: 'Saudi Arabia',
+        },
+        population: 111,
+        region: 'some region',
+        capital: 'UK capital',
+        flags: {
+          alt: 'The flag of UK',
+          png: 'https://bla.com/bla/uk.png',
+        },
+      },
+    ];
   }
 }

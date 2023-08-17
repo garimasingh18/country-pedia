@@ -44,13 +44,18 @@ h3,
 h4,
 h5,
 h5 {
-  font-family: "oswald-bold";
   font-weight: normal;
   margin: 0;
   padding: 0;
 }
 ul h1 {
   font-size: $large;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 // App specific
@@ -65,7 +70,7 @@ body {
   background-color: $white-darker-10;
   font-family: Arial, Helvetica, "Lucida Sans", "Lucida Sans Regular";
   @media only screen and (min-width: 600px) {
-    padding: 0 $xxxlarge;
+    padding: $xxxlarge;
   }
 }
 a {
@@ -74,6 +79,5 @@ a {
   &:hover,
   &:active {
     text-decoration: underline;
-    font-weight: bold;
   }
 }

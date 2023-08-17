@@ -1,0 +1,62 @@
+@import "./../../../scss/variables";
+@import "./../../../scss/colours";
+
+.back a {
+  background-color: $base-white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+  padding: 15px 50px;
+  border-radius: $xsmall/2;
+  &:hover {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 40px;
+}
+
+.flag {
+  width: 500px;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+.description {
+  color: $base-black;
+  margin-left: $xxxlarge;
+  width: 100%;
+  h3 {
+    font-size: $large;
+  }
+}
+.list {
+  display: flex;
+  margin-top: $xlarge;
+  > div {
+    width: 50%;
+  }
+  ul li {
+    margin-bottom: $xsmall;
+  }
+}
+
+.border {
+  display: flex;
+  align-items: baseline;
+  font-size: 16px;
+  height: 24px;
+  margin-top: 30px;
+  p {
+    margin: 0 0 0 15px;
+    height: 20px;
+    padding: 5px 30px;
+    background-color: $base-white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: $xsmall/2;
+  }
+}

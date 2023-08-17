@@ -6,9 +6,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { CountryDetailsComponent } from './pages/country-details/country-details.component';
 import { CountriesComponent } from './pages/countries/countries.component';
+import { ReplaceSpacesWithDashPipe } from './core/pipes/replace-spaces-with-dash.pipe';
 
 @NgModule({
-  declarations: [AppComponent, CountryDetailsComponent, CountriesComponent],
+  declarations: [
+    AppComponent,
+    CountryDetailsComponent,
+    CountriesComponent,
+    ReplaceSpacesWithDashPipe,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
