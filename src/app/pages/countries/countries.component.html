@@ -1,1 +1,27 @@
-<p>countries works!</p>
+<div class="container">
+  <p class="error" *ngIf="!countries?.length">
+    Hold tight! Our systems are fine-tuning themselves. Please retry in a bit.
+  </p>
+  <div class="country" *ngFor="let country of countries">
+    <div
+      class="flag"
+      [ngStyle]="{ 'background-image': 'url(' + country.flags.png + ')' }"
+    ></div>
+
+    <div class="informations">
+      <div class="name">
+        <a href="#">
+          <b>{{ country.name.common }}</b>
+        </a>
+      </div>
+      <div>
+        <p><strong>Population:</strong> {{ country.population }}</p>
+        <p><strong>Region:</strong>{{ country.region }}</p>
+        <p>
+          <strong>Capital:</strong>
+          {{ country.capital }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

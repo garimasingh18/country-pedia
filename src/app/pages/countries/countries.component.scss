@@ -1,0 +1,50 @@
+@import "./../../../scss/variables";
+@import "./../../../scss/colours";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: $xxlarge;
+}
+
+.error {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+}
+
+.country {
+  width: 100%;
+  height: 340px;
+  background-color: $base-white;
+  margin: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  border-radius: $xsmall;
+
+  @media only screen and (min-width: 600px) {
+    width: 270px; // Following mobile first approach
+  }
+
+  .flag {
+    height: 50%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-top-left-radius: $xsmall;
+    border-top-right-radius: $xsmall;
+  }
+}
+
+.informations {
+  color: $base-black;
+  margin: $medium;
+
+  .name {
+    margin-bottom: $medium;
+  }
+}

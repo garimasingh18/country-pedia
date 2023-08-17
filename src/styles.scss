@@ -1,1 +1,79 @@
-/* You can add global styles to this file, and also import other style files */
+@import "scss/variables";
+@import "scss/colours";
+@import "scss/mixin";
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  font-family: "oswald-bold";
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+ul h1 {
+  font-size: $large;
+}
+
+// App specific
+p {
+  margin: 0 0 $xxsmall;
+  padding: 0;
+}
+body {
+  padding: 0 $medium;
+  margin: 0;
+  font-size: $basefont;
+  background-color: $white-darker-10;
+  font-family: Arial, Helvetica, "Lucida Sans", "Lucida Sans Regular";
+  @media only screen and (min-width: 600px) {
+    padding: 0 $xxxlarge;
+  }
+}
+a {
+  color: $base-black;
+  text-decoration: none;
+  &:hover,
+  &:active {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+}
