@@ -3,7 +3,10 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CountryDetailsComponent } from './country-details.component';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
+import { CountryService } from './../../core/services/country.service';
+import { CountriesServiceStub } from '../../../mocks/country.service.mock';
+import { of } from 'rxjs';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CountryDetailsComponent', () => {
   let component: CountryDetailsComponent;
@@ -11,14 +14,20 @@ describe('CountryDetailsComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule, RouterModule],
+      imports: [HttpClientModule, RouterTestingModule],
       declarations: [CountryDetailsComponent],
       providers: [
         {
           provide: ActivatedRoute,
           useValue: {
-            snapshot: { params: { name: 'Saudi-Arabia' } },
+            params: of({
+              name: 'mock-country',
+            }),
           },
+        },
+        {
+          provide: CountryService,
+          useClass: CountriesServiceStub,
         },
       ],
     });
@@ -27,7 +36,7 @@ describe('CountryDetailsComponent', () => {
     fixture.detectChanges();
   });
 
-  xit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 });

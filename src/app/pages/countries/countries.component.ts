@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CountryService } from './../../core/services/country.service';
-import { Countries } from './../../core/interfaces/countries';
+import { CountriesDeatils } from './../../core/interfaces/countries';
 
 @Component({
   selector: 'app-countries',
@@ -9,8 +9,8 @@ import { Countries } from './../../core/interfaces/countries';
   styleUrls: ['./countries.component.scss'],
 })
 export class CountriesComponent {
-  private countries!: Countries[];
-  filteredCountries: Countries[] = [];
+  private countries!: CountriesDeatils[];
+  filteredCountries: CountriesDeatils[] = [];
 
   constructor(
     private http: HttpClient,
@@ -23,6 +23,7 @@ export class CountriesComponent {
       this.filteredCountries = res;
     });
   }
+
   filterCountriesByRegion(value: string): void {
     if (value === 'all') {
       this.filteredCountries = this.countries;

@@ -1,18 +1,7 @@
-export interface Countries {
-  name: {
-    common: string;
-    nativeName: string;
-  };
-  population: number;
-  region: string;
-  capital: string;
-  cca3: string;
-  flags: { png: string };
-}
 export interface CountriesDeatils {
   name: {
     common: string;
-    nativeName?: string;
+    nativeName: {};
   };
   population: number;
   region: string;

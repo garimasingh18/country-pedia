@@ -5,7 +5,7 @@ import { CountriesComponent } from './countries.component';
 import { CountryService } from './../../core/services/country.service';
 import { CountriesServiceStub } from '../../../mocks/country.service.mock';
 import { ReplaceSpacesWithDashPipe } from '../../core/pipes/replace-spaces-with-dash.pipe';
-import { RouterModule } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 import { ActivatedRoute } from '@angular/router';
 
 describe('CountriesComponent', () => {
@@ -14,7 +14,7 @@ describe('CountriesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule, RouterModule],
+      imports: [HttpClientModule, RouterTestingModule],
       declarations: [CountriesComponent, ReplaceSpacesWithDashPipe],
       providers: [
         {

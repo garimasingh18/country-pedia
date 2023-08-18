@@ -5,12 +5,12 @@ export class CountriesServiceStub {
     return of([
       {
         name: {
-          common: 'Saudi Arabia',
+          common: 'mock country',
         },
         population: 111,
         region: 'some region',
-        capital: 'UK capital',
-        flags: { png: 'someurl' },
+        capital: 'mock capital',
+        flags: { png: 'somemockurl' },
       },
       {
         name: {
@@ -32,11 +32,11 @@ export class CountriesServiceStub {
       },
     ]);
   }
-  getCountryDeatils(name: any) {
-    return [
+  getCountryDeatils(name: string) {
+    return of([
       {
         name: {
-          common: 'Saudi Arabia',
+          common: 'mock country',
         },
         population: 111,
         region: 'some region',
@@ -46,6 +46,6 @@ export class CountriesServiceStub {
           png: 'https://bla.com/bla/uk.png',
         },
       },
-    ];
+    ]);
   }
 }

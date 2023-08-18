@@ -15,7 +15,9 @@
     <span>Back</span>
   </a>
 </div>
-<div class="container" *ngIf="!country">Implement browser back guard</div>
+<div class="container" *ngIf="!country">
+  Implement browser back guard to prevent datail page from refreshing
+</div>
 <div class="container" *ngIf="country">
   <div class="flag">
     <img [src]="country.flags.png" alt="flag" />
@@ -25,7 +27,7 @@
     <div class="list">
       <div>
         <ul>
-          <li><b>Native Name:</b></li>
+          <li><b>Native Name:</b>{{ nativeName }}</li>
           <li><b>Population: </b>{{ country.population }}</li>
           <li><b>Region:</b> {{ country.region }}</li>
           <li><b>Sub Region:</b> {{ country.subregion }}</li>
