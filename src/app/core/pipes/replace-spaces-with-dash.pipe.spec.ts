@@ -7,8 +7,8 @@ describe('ReplaceSpacesWithDashPipe', () => {
     expect(pipe).toBeTruthy();
   });
 
-  it('transforms "Grait Britain" to "Grait-Britain"', () => {
-    expect(pipe.transform('Grait Britain')).toBe('Grait-Britain');
+  it('transforms "Great Britain" to "Great-Britain"', () => {
+    expect(pipe.transform('Great Britain')).toBe('Great-Britain');
   });
 
   it('transforms "foo bar" to "foo-bar"', () => {
