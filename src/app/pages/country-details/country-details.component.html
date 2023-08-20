@@ -27,8 +27,8 @@
     <div class="list">
       <div>
         <ul>
-          <li><b>Native Name:</b>{{ nativeName }}</li>
-          <li><b>Population: </b>{{ country.population }}</li>
+          <li><b>Native Name: </b>{{ nativeName }}</li>
+          <li><b>Population: </b>{{ country.population | number }}</li>
           <li><b>Region:</b> {{ country.region }}</li>
           <li><b>Sub Region:</b> {{ country.subregion }}</li>
           <li><b>Capital: </b>{{ country.capital }}</li>
@@ -37,17 +37,12 @@
       <div>
         <ul>
           <li><b>Top Level Domain: </b>{{ country.tld }}</li>
+          <li><b>Currencies: </b>{{ currency }}</li>
           <li>
-            <b>Currencies:</b>
-            <span *ngFor="let currency of country.currencies">
-              {{ currency.name }} ({{ currency.symbol }})
+            <b>Languages: </b>
+            <span *ngFor="let language of languages; last as isLast">
+              {{ language }}<span *ngIf="!isLast">,</span>
             </span>
-          </li>
-          <li>
-            <b>Languages:</b>
-            <!--<span *ngFor="let language of country.languages">
-              {{ language.name }} ({{ language.nativeName }})
-            </span>-->
           </li>
         </ul>
       </div>

@@ -32,8 +32,8 @@
   .flag {
     height: 50%;
     width: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: $base-white no-repeat top;
+    background-size: 100% auto;
     border-top-left-radius: $xsmall;
     border-top-right-radius: $xsmall;
   }
