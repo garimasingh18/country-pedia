@@ -68,6 +68,8 @@ body {
   font-size: $basefont;
   background-color: $white-darker-10;
   font-family: Arial, Helvetica, "Lucida Sans", "Lucida Sans Regular";
+  height: 100vh;
+  overflow: hidden;
 }
 a {
   color: $base-black;

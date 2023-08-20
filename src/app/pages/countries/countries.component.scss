@@ -1,11 +1,15 @@
 @import "./../../../scss/variables";
 @import "./../../../scss/colours";
+@import "./../../../scss/mixin";
 
 .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  height: calc(100vh - 200px);
+  overflow-y: scroll;
+  @include scrollbars(8px, $black-ligher-10);
 }
 
 .error {
